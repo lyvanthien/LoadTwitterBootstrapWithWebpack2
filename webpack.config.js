@@ -22,6 +22,8 @@ const bootstrapConfig = isProd ? bootstrapEntryPoints.prod : bootstrapEntryPoint
 module.exports = {
     entry: {
         app: './src/app.js',
+        contact:'./src/contact.js',
+        about: './src/about.js',
         bootstrap: bootstrapConfig
     },
     output: {
@@ -69,12 +71,32 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Project Demo',
             minify: {
-                collapseWhitespace: false
+                collapseWhitespace: true
             },
             hash: true,
             excludeChunks: ['contact', 'about'],
             /*filename: './../index.html',*/
             template: './src/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            title:'Contact Page',
+            minify:{
+                collapseWhitespace: true
+            },
+            hash: true,
+            chunks: ['contact'],
+            filename: 'contact.html',
+            template: './src/views/contact.html'
+        }),
+        new HtmlWebpackPlugin({
+            title:'About Page',
+            minify:{
+                collapseWhitespace: true
+            },
+            hash: true,
+            chunks: ['about'],
+            filename: 'about.html',
+            template: './src/views/about.html'
         }),
         new ExtractTextPlugin({
             filename: "css/[name].css",
