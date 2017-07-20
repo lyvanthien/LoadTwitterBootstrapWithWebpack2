@@ -1,0 +1,41 @@
+@import './bootstrap/customizations.scss';
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    min-height: 100%;
+    // background: url('./images/img_ihatetomatoes.png') center center no-repeat;
+    /*ul {
+        list-style: none;
+        list-style-type: none;
+    }*/
+}
+body {
+    /*background-color: pink;*/
+    p{
+        color: blue;
+    }
+    h1{
+        color: $brand-success;
+        /*font-size: 2.9em;*/
+    }
+}
+
+/*ul .dropdown-menu > li {
+    list-style: none;
+    list-style-type: none;
+}*/
+/*ul li {
+    background: red;
+    list-style: square;
+    list-style-type: none;
+}*/
+
+// Open state for the dropdown
+/*.open {
+    > ul {
+        list-style: number;
+    }
+ 
+}*/
